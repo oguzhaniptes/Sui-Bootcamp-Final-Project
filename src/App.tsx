@@ -1,10 +1,12 @@
 import { ConnectButton } from "@mysten/dapp-kit";
-import { Box, Container, Flex, Heading } from "@radix-ui/themes";
+import { Box, Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
   return (
-    <>
+    <div>
       <Flex
         position="sticky"
         px="4"
@@ -15,24 +17,42 @@ function App() {
         }}
       >
         <Box>
-          <Heading>dApp Starter Template</Heading>
+          <Heading>oFinder dApp</Heading>
         </Box>
 
         <Box>
           <ConnectButton />
         </Box>
       </Flex>
-      <Container>
-        <Container
-          mt="5"
-          pt="2"
-          px="4"
-          style={{ background: "var(--gray-a2)", minHeight: 500 }}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2rem",
+          width: "100vw",
+          height: "80vh",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "2rem",
+            justifyContent: "center",
+            maxWidth: "200px",
+          }}
         >
-          <WalletStatus />
-        </Container>
-      </Container>
-    </>
+          <Button size={"3"} onClick={() => navigate("/create-notice")}>
+            Create Notice
+          </Button>
+          <Button size={"3"} onClick={() => navigate("/found-doc")}>
+            I found document!
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }
 
