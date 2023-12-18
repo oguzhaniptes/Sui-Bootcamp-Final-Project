@@ -1,6 +1,5 @@
 import { ConnectButton } from "@mysten/dapp-kit";
-import { Box, Button, Container, Flex, Heading } from "@radix-ui/themes";
-import { WalletStatus } from "./WalletStatus";
+import { Box, Button, Flex, Heading } from "@radix-ui/themes";
 import { useNavigate } from "react-router-dom";
 
 function App() {
